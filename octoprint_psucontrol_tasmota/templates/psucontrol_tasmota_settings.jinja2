@@ -1,0 +1,37 @@
+<form class="form-horizontal">
+    <h4>General</h4>
+    <div class="control-group">
+        <label class="control-label">Address</label>
+        <div class="controls">
+            <input type="text" class="input" data-bind="value: settings.plugins.psucontrol_tasmota.address">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Plug</label>
+        <div class="controls">
+            <input type="number" min="1" class="input-mini" data-bind="value: settings.plugins.psucontrol_tasmota.plug">
+            <br/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.psucontrol_tasmota.enable_auth"> Use authentication
+            </label>
+        </div>
+    </div>
+    <!-- ko if: settings.plugins.psucontrol_tasmota.enable_auth() -->
+    <div class="control-group">
+        <label class="control-label">Username</label>
+        <div class="controls">
+            <input type="text" class="input" data-bind="value: settings.plugins.psucontrol_tasmota.username">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls">
+            <input type="text" class="input" data-bind="value: settings.plugins.psucontrol_tasmota.password">
+        </div>
+    </div>
+    <!-- /ko -->
+</form>
