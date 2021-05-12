@@ -6,7 +6,7 @@ import setuptools
 plugin_identifier = "psucontrol_tasmota"
 plugin_package = "octoprint_%s" % plugin_identifier
 plugin_name = "OctoPrint-PSUControl-Tasmota"
-plugin_version = "1.0.0"
+plugin_version = "1.0.1"
 plugin_description = "Adds Tasmota Smart Plug support to OctoPrint-PSUControl as a sub-plugin"
 plugin_author = "Shawn Bruce"
 plugin_author_email = "kantlivelong@gmail.com"
