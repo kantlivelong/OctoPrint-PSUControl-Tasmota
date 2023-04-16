@@ -101,6 +101,24 @@ class PSUControl_Tasmota(octoprint.plugin.StartupPlugin,
 
 
     def get_psu_state(self):
+        # First try the "Power"-cmd
+        cmd = "Power{}".format(self.config['plug'])
+
+        response = self.send(cmd)
+        if not response:
+            return False
+        data = response.json()
+
+        status = None
+        try:
+            status = (data['POWER'] == 'ON')
+        except KeyError:
+            pass
+
+        if status != None:
+            return status
+
+        # If that didn't work, try the "Status"-cmd
         cmd = "Status 0"
 
         response = self.send(cmd)
