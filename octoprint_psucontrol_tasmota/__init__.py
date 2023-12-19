@@ -110,13 +110,13 @@ class PSUControl_Tasmota(octoprint.plugin.StartupPlugin,
 
         status = None
         try:
-            status = (data['StatusSTS']['POWER' + str(self.config['plug'])] == 'ON')
+            status = (data['StatusSTS']['POWER' + str(self.config['plug'])].upper() == 'ON')
         except KeyError:
             pass
 
         if status == None and self.config['plug'] == 1:
             try:
-                status = (data['StatusSTS']['POWER'] == 'ON')
+                status = (data['StatusSTS']['POWER'].upper() == 'ON')
             except KeyError:
                 pass
 
